@@ -1,0 +1,68 @@
+<templateSet group="MyTemplates">
+  <template name="newInstance" value="fun newInstance($args$) = $fragment$().apply {&#10;    arguments = Bundle().apply {&#10;        $addArgs$&#10;    }&#10;}" description="create a new Fragment instance with arguments" toReformat="true" toShortenFQNames="true">
+    <variable name="args" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="fragment" expression="className()" defaultValue="" alwaysStopAt="true" />
+    <variable name="addArgs" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+      <option name="KOTLIN_OBJECT_DECLARATION" value="true" />
+      <option name="KOTLIN_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="LDR" value="private val _$NAME$ = MutableLiveData&lt;$TYPE$&gt;()&#10;val $NAME$: LiveData&lt;$TYPE$&gt; = _$NAME$" description="Creates MutableLiveData with LiveData" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="provideSk" value="@Provides&#10;@Singleton&#10;fun provide$NAME$($PARAMS$): $TYPE$ {&#10;    return $NAME$($PARAMS$)&#10;}" description="Provides Dagger singleton instance" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARAMS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="starter" value="fun newIntent(context: Context, $ARGS$) {&#10;    val starter = Intent(context, $ACTIVITY$::class.java)&#10;        .putExtra($CURSOR$)&#10;    context.startActivity(starter)&#10;}" description="Creates a static start(...) helper method to start an Activity" toReformat="true" toShortenFQNames="true">
+    <variable name="ARGS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ACTIVITY" expression="className()" defaultValue="" alwaysStopAt="true" />
+    <variable name="CURSOR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_OBJECT_DECLARATION" value="true" />
+      <option name="KOTLIN_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="visibilityExt" value="private fun View.visibility(isVisible: Boolean) {&#10;    visibility = if (isVisible) View.VISIBLE else View.GONE&#10;}" description="Creates an extension to set view's visibility" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="providePF" value="@Provides&#10;@PerFeature&#10;static $TYPE$ provide$NAME$($PARAMS$) {&#10;    return new $NAME$($VALUES$);&#10;}" description="Provides Dagger per feature instance" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARAMS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUES" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="provideS" value="@Provides&#10;@Singleton&#10;static $TYPE$ provide$NAME$($PARAMS$) {&#10;    return new $NAME$($VALUES$);&#10;}" description="Provides Dagger singleton instance" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARAMS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUES" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="provideVM" value="@Provides&#10;@PerFeature&#10;static ViewModelProviderFactory&lt;$TYPE$&gt; provide$NAME$($PARAMS$) {&#10;    return new ViewModelProviderFactory&lt;&gt;(() -&gt; &#10;            new $NAME$($VALUES$));&#10;}" description="Provides Dagger Per Feature ViewModel instance" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARAMS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUES" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>

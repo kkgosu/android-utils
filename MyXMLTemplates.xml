@@ -1,0 +1,24 @@
+<templateSet group="MyXMLTemplates">
+  <template name="text" value="&lt;TextView&#10;    android:id=&quot;@+id/$ID$&quot;&#10;    android:layout_width=&quot;$WIDTH$&quot;&#10;    android:layout_height=&quot;$HEIGHT$&quot;&#10;    tools:text=&quot;$TEXT$&quot; /&gt;" description="creates textView" toReformat="false" toShortenFQNames="true">
+    <variable name="ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="WIDTH" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="HEIGHT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TEXT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="appbar" value="&lt;com.google.android.material.appbar.AppBarLayout&#10;    android:id=&quot;@+id/$APPBAR_NAME$&quot;&#10;    style=&quot;?attr/appBarLayoutStyle&quot;&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;wrap_content&quot;&#10;    app:theme=&quot;?attr/actionBarTheme&quot;&gt;&#10;&#10;    &lt;androidx.appcompat.widget.Toolbar&#10;        android:id=&quot;@+id/toolbar&quot;&#10;        android:layout_width=&quot;match_parent&quot;&#10;        android:layout_height=&quot;wrap_content&quot;&#10;        app:title=&quot;$TITLE$&quot;/&gt;&#10;&#10;&lt;/com.google.android.material.appbar.AppBarLayout&gt;" description="creates default appBar with toolbar" toReformat="true" toShortenFQNames="true">
+    <variable name="APPBAR_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TITLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="recycler" value="&lt;androidx.recyclerview.widget.RecyclerView&#10;    android:id=&quot;@+id/$ID$&quot;&#10;    android:layout_width=&quot;match_parent&quot;&#10;    android:layout_height=&quot;wrap_content&quot;&#10;    android:orientation=&quot;vertical&quot;&#10;    app:layoutManager=&quot;androidx.recyclerview.widget.LinearLayoutManager&quot;&gt;" description="creates default recyclerView" toReformat="false" toShortenFQNames="true">
+    <variable name="ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+</templateSet>
